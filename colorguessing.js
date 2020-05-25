@@ -7,12 +7,26 @@ var message = document.getElementById("message");
 var h1 = document.querySelector("h1");
 var selectedColor = document.getElementById("selectedColor");
 var resetBtn = document.getElementById("reset");
-var easyBtn = document.getElementById("easyBtn");
-var hardBtn = document.getElementById("hardBtn");
-
+// var easyBtn = document.getElementById("easyBtn");
+// var hardBtn = document.getElementById("hardBtn");
+var typeBtns = document.querySelectorAll(".typeBtn");
 selectedColor.textContent = targetColor;
 
 resetBtn.addEventListener("click", function () {
+  reset();
+});
+
+typeBtns.forEach((btn, i) => {
+  btn.addEventListener("click", function () {
+    typeBtns[0].classList.remove("selected");
+    typeBtns[1].classList.remove("selected");
+    this.classList.add("selected");
+    this.textContent === "Easy" ? (size = 3) : (size = 6);
+    reset();
+  });
+});
+
+function reset() {
   colors = generateColors(size);
   index = Math.floor(Math.random() * size);
   targetColor = colors[index];
@@ -20,45 +34,15 @@ resetBtn.addEventListener("click", function () {
   resetBtn.textContent = "New Colors";
   message.textContent = "";
   squares.forEach((square, i) => {
-    square.style.backgroundColor = colors[i];
-  });
-  h1.style.backgroundColor = "steelblue";
-});
-
-easyBtn.addEventListener("click", function () {
-  hardBtn.classList.remove("selected");
-  easyBtn.classList.add("selected");
-  size = 3;
-  colors = generateColors(size);
-  index = Math.floor(Math.random() * size);
-  targetColor = colors[index];
-  message.textContent = "";
-  selectedColor.textContent = targetColor;
-  squares.forEach((square, i) => {
     if (colors[i]) {
+      square.style.display = "block";
       square.style.backgroundColor = colors[i];
     } else {
       square.style.display = "none";
     }
   });
   h1.style.backgroundColor = "steelblue";
-});
-
-hardBtn.addEventListener("click", function () {
-  hardBtn.classList.add("selected");
-  easyBtn.classList.remove("selected");
-  size = 6;
-  colors = generateColors(size);
-  index = Math.floor(Math.random() * size);
-  targetColor = colors[index];
-  message.textContent = "";
-  selectedColor.textContent = targetColor;
-  squares.forEach((square, i) => {
-    square.style.backgroundColor = colors[i];
-    square.style.display = "block";
-  });
-  h1.style.backgroundColor = "steelblue";
-});
+}
 
 squares.forEach((square, i) => {
   square.style.backgroundColor = colors[i];
