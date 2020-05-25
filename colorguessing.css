@@ -1,0 +1,23 @@
+body{
+    background-color: black;
+    text-align: center;
+}
+/* #navbar{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+li{
+    width: 20%;
+}
+#squaremap{
+    width: 500px;
+    margin: 0 auto;
+}
+.square{
+    background-color: lightblue;
+    width: 30%;
+    float: left;
+    padding-bottom: 30%;
+    margin: 1.66%;
+}
