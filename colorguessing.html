@@ -13,18 +13,16 @@
     <title>Color Guessing</title>
   </head>
   <body>
-    <h1>The great RGB <span id="selectedColor"></span> color game</h1>
-    <ul class="nav justify-content-center" id="navbar">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-    </ul>
+    <h1>
+      The great <br />
+      <span id="selectedColor"></span> <br />color game
+    </h1>
+    <div id="nav">
+      <button id="reset">New Colors</button>
+      <span id="message"></span>
+      <button id="easyBtn">Easy</button>
+      <button id="hardBtn" class="selected">Hard</button>
+    </div>
     <div id="squaremap">
       <div class="square"></div>
       <div class="square"></div>
