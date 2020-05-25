@@ -32,6 +32,7 @@ easyBtn.addEventListener("click", function () {
   colors = generateColors(size);
   index = Math.floor(Math.random() * size);
   targetColor = colors[index];
+  message.textContent = "";
   selectedColor.textContent = targetColor;
   squares.forEach((square, i) => {
     if (colors[i]) {
@@ -50,6 +51,7 @@ hardBtn.addEventListener("click", function () {
   colors = generateColors(size);
   index = Math.floor(Math.random() * size);
   targetColor = colors[index];
+  message.textContent = "";
   selectedColor.textContent = targetColor;
   squares.forEach((square, i) => {
     square.style.backgroundColor = colors[i];
